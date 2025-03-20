@@ -37,3 +37,5 @@ test("Mixed results test", () => {
     { letter: "Y", result: "incorrect" },
   ]);
 });
+
+// med dessa tre tester anser jag att ja testar det som denna function gör
