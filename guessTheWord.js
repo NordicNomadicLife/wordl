@@ -32,9 +32,5 @@ function guessTheWord(guess, correctWord) {
   return theWord;
 }
 
-// Exempel på körning:
-console.log(guessTheWord("STORM", "STARK"));
-console.log(guessTheWord("TRAKT", "STARK"));
-console.log(guessTheWord("FLYGA", "STARK"));
 
 module.exports = guessTheWord;
