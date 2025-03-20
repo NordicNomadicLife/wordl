@@ -2,8 +2,9 @@
   "name": "wordl",
   "version": "1.0.0",
   "main": "script.js",
+  "type": "module",
   "scripts": {
-    "test": "node guessTheWord.test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
