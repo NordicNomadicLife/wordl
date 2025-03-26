@@ -4,6 +4,9 @@
   "main": "script.js",
   "type": "module",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
     "test": "jest"
   },
   "repository": {
@@ -16,12 +19,28 @@
   "bugs": {
     "url": "https://github.com/NordicNomadicLife/wordl/issues"
   },
-  "homepage": "https://github.com/NordicNomadicLife/wordl#readme",
+  "homepage": "https://github.com/NordicNomadicLife/wordl/public/index.html",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.86.0"
   },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
