@@ -3,6 +3,9 @@ function guessTheWord(guess, correctWord) {
   let checkedIndices = [];
   let letterCount = {};
 
+  guess = guess.toLowerCase();
+  correctWord = correctWord.toLowerCase();
+
   // First loop: check "correct" och "incorrect"
   for (let i = 0; i < guess.length; i++) {
     if (correctWord[i] === guess[i]) {
@@ -32,5 +35,4 @@ function guessTheWord(guess, correctWord) {
   return theWord;
 }
 
-
-module.exports = guessTheWord;
+export default guessTheWord;
