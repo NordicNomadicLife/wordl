@@ -1,4 +1,48 @@
-.home-container {
+.homeContainer {
   text-align: center;
-  padding: 20px;
+
+  form{
+    margin-top: 2rem;
+  }
+}
+
+.wordDisplay {
+  display: flex;
+  gap: 4px;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.letterBox {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.correct {
+  background-color: green;
+  color: black;
+}
+
+.incorrect {
+  background-color: red;
+  color: black;
+}
+
+.misplaced {
+  background-color: yellow;
+  color: black;
+}
+
+.dropdownMeny{
+  display: flex;
+    justify-content: center;
+
 }
