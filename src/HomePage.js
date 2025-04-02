@@ -40,7 +40,7 @@ export default function HomePage() {
 
   return (
     <div className="homeContainer">
-      <h1>Welcome to Wordl!</h1>
+      <h2>Lets play!</h2>
       <UnikLetters onToggle={setUniqueLetters} />
       <Dropdown onSelectLength={setWordLength} />
       <WordInput onGuess={handleGuess} />
