@@ -6,6 +6,18 @@
   }
 }
 
+.introName{
+  display: flex;
+  justify-content: center;
+}
+
+.navbar{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
 .wordDisplay {
   display: flex;
   gap: 4px;
