@@ -22,7 +22,7 @@ export default function HomePage() {
 
     const fetchWord = async () => {
       try {
-        const res = await fetch(`http://localhost:5080/api/words/${wordLength}?unique=${uniqueLetters}`);
+        const res = await fetch(`/api/words/${wordLength}?unique=${uniqueLetters}`);
         const data = await res.json();
   
         if (!Array.isArray(data) || data.length === 0) {
