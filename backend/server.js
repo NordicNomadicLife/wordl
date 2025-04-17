@@ -3,9 +3,16 @@ import cors from "cors";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import connectDB from "./db.js";
+import highscoreRoutes from "./routes/highscore.js";
 
 const app = express();
 const PORT = 5080;
+
+dotenv.config();
+connectDB();
 
 app.use(cors());
 app.use(express.json());
@@ -31,6 +38,9 @@ app.get("/api/words/:length", (req, res) => {
   res.json(filtered);
 });
 
+
+app.use("/api/highscores", highscoreRoutes);
+
 app.use(express.static(path.join(__dirname, "client/dist")));
 
 app.get("*", (req, res) => {
@@ -38,5 +48,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(` Server running on http://localhost:${PORT}`);
 });
