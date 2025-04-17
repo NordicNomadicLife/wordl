@@ -1,25 +1,28 @@
 import { useState } from "react";
 
-export default function WordInput({ onGuess }) {
+
+export default function WordInput({ onGuess, disabled }) {
   const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.length > 0) {
-      onGuess(input); 
-      setInput(""); 
-    }
+    if (!input.trim()) return;
+
+    console.log(" Guess submitted:", input);
+    onGuess(input);
+    setInput("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
+        disabled={disabled}
         placeholder="Guess a word!"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button type="submit">Guess</button>
+      <button type="submit" disabled={disabled}>Guess</button>
     </form>
   );
 }
