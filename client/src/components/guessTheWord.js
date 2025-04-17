@@ -1,38 +1,37 @@
 function guessTheWord(guess, correctWord) {
-  let theWord = [];
-  let checkedIndices = [];
-  let letterCount = {};
+  const result = new Array(guess.length);
+  const guessLower = guess.toLowerCase();
+  const correctLower = correctWord.toLowerCase();
 
-  guess = guess.toLowerCase();
-  correctWord = correctWord.toLowerCase();
+  const letterCount = {};
 
-  // First loop: check "correct" och "incorrect"
-  for (let i = 0; i < guess.length; i++) {
-    if (correctWord[i] === guess[i]) {
-      theWord.push({ letter: guess[i], result: "correct" });
-      checkedIndices.push(i);
-    } else {
-      theWord.push({ letter: guess[i], result: "incorrect" });
+  // Count all letters in the correct word
+  for (let char of correctLower) {
+    letterCount[char] = (letterCount[char] || 0) + 1;
+  }
+
+  // First pass: mark correct
+  for (let i = 0; i < guessLower.length; i++) {
+    if (guessLower[i] === correctLower[i]) {
+      result[i] = { letter: guessLower[i], result: "correct" };
+      letterCount[guessLower[i]]--;
     }
   }
 
-  // check how many times every letter are in the secret word
-  for (let i = 0; i < correctWord.length; i++) {
-    letterCount[correctWord[i]] = (letterCount[correctWord[i]] || 0) + 1;
-  }
-
-  // second loop: check "misplaced"
-  for (let i = 0; i < guess.length; i++) {
-    if (theWord[i].result === "incorrect") {
-      let letter = guess[i];
-      if (letterCount[letter] > 0 && !checkedIndices.includes(i)) {
-        theWord[i].result = "misplaced";
+  // Second pass: mark misplaced/incorrect
+  for (let i = 0; i < guessLower.length; i++) {
+    if (!result[i]) {
+      const letter = guessLower[i];
+      if (letterCount[letter] && letterCount[letter] > 0) {
+        result[i] = { letter, result: "misplaced" };
         letterCount[letter]--;
+      } else {
+        result[i] = { letter, result: "incorrect" };
       }
     }
   }
 
-  return theWord;
+  return result;
 }
 
 export default guessTheWord;
