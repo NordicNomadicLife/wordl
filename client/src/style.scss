@@ -58,3 +58,41 @@
     justify-content: center;
 
 }
+
+.highscoreContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+  .highscoreContainer h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+}
+
+.highscoreTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+  .highscoreTable th,
+  .highscoreTable td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .highscoreTable thead {
+    background-color: #aca7a7;
+    font-weight: bold;
+  }
+
+  .highscoreTable tbody tr:nth-child(even) {
+    background-color: #493f3f;
+  }
+}
+
