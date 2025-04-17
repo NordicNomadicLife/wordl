@@ -8,7 +8,7 @@ import connectDB from "./db.js";
 import highscoreRoutes from "./routes/highscore.js";
 
 const app = express();
-const PORT = 5080;
+const PORT = process.env.PORT || 5080;
 
 dotenv.config();
 connectDB();
