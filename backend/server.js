@@ -3,7 +3,6 @@ import cors from "cors";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 import connectDB from "./db.js";
 import highscoreRoutes from "./routes/highscore.js";
