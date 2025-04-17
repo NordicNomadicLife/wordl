@@ -14,7 +14,7 @@ export default function Dropdown({ onSelectLength }) {
       <label>Choose number of letter: </label>
       <select value={selectedOption} onChange={handleChange}>
         <option value="">-- Choose --</option>
-        {[...Array(15)].map((_, i) => (
+        {[...Array(14)].map((_, i) => (
           <option key={i + 1} value={i + 1}>
             {i + 1}
           </option>
